@@ -28,40 +28,41 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  ||   ||  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | CAPS |  A  |  S  |  D  |  F  |  G  ||   ||  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  ||   ||  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | ENT ||   || SPC | RSE  | ALT |
+// |      |  Z  |  X  |  C  |  V  |  B  ||   ||  N  |  M   |  ,  |  .  |  /  |      |
+//                    |     | LWR | ENT ||   || SPC | RSE  |     |
                         bindings = <
-   &kp TAB    &kp Q       &kp W       &kp E        &kp R        &kp T                      &kp Y      &kp U        &kp I        &kp O       &kp P          &kp BSPC
-   &kp CAPS   &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G                      &kp H      &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMI  &kp SQT
-   &kp LSHFT  &kp Z       &kp X       &kp C        &kp V        &kp B                      &kp N      &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp RSHFT
-                                      &kp LGUI     &mo 1        &mt LCTRL RET              &kp SPACE  &mo 2        &kp RALT
+   &kp TAB   &kp Q       &kp W       &kp E        &kp R        &kp T                      &kp Y      &kp U        &kp I        &kp O       &kp P          &kp BSPC
+   &kp CAPS  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G                      &kp H      &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMI  &kp SQT
+   &none     &kp Z       &kp X       &kp C        &kp V        &kp B                      &kp N      &kp M        &kp COMMA    &kp DOT     &kp FSLH       &none
+                                     &none        &mo 1        &mt LCTRL RET              &kp SPACE  &mo 2        &none
                         >;
                 };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC |      |      |       |       |     ||   ||     |     |  UP |     | HOME | DEL |
 // |     | LGUI | LALT | LCTRL | LSHFT |     ||   ||     | LFT | DWN | RGT | END  |     |
 // |     |      |      |       |       |     ||   ||     |     |     |     |      |     |
-//                     |       |       |     ||   ||     |     | RSE |
+//                     |  RSE  |       |     ||   ||     | RSE |     |
                         bindings = <
-   &kp ESC  &trans    &trans    &trans     &trans     &trans                &trans  &trans    &kp UP    &trans     &kp HOME  &kp DEL 
-   &trans   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans                &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &trans 
-   &trans   &trans    &trans    &trans     &trans     &trans                &trans  &trans    &trans    &trans     &trans    &trans 
-                                &trans     &trans     &trans                &trans  &mo 3     &trans
+   &kp ESC  &none     &none     &none      &none      &none                &none  &none     &kp UP    &none      &kp HOME  &kp DEL 
+   &none    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &none 
+   &none    &none     &none     &none      &none      &none                &none  &none     &none     &none      &none     &none 
+                                &mo 3      &none      &none                &none  &mo 3     &none
                         >;
                 };
                 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1   |  2   |   3   |   4   |  5  ||   ||  6    |  7  |  8  |  9  |  0  | DEL |
-// |      | LGUI | LALT | LCTRL | LSHFT |     ||   ||  -    |  =  |  {  |  }  | "|" |  `  |
-// |      |      |      |       |       |     ||   ||  _    |  +  |  [  |  ]  |  \  |  ~  |
-//                      |       |  RSE  |     ||   ||       |     |     |
+// |  ESC |  1   |  2   |   3   |   4   |  5  ||   ||  6  |  7  |  8  |  9  |  0  | DEL |
+// |      | LGUI | LALT | LCTRL | LSHFT |     ||   ||  -  |  =  |  {  |  }  | "|" |  `  |
+// |      |      |      |       |       |     ||   ||     |     |     |     |  \  |  ~  |
+//                      |       |  RSE  |     ||   ||     |     |     |
                         bindings = <
-   &kp ESC  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5           &kp N6     &kp N7           &kp N8          &kp N9         &kp N0         &kp DEL
-   &trans   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans           &kp MINUS  &hm RSHFT EQUAL  &hm RCTRL LBKT  &hm RALT RBKT  &hm RGUI PIPE  &kp GRAVE
-   &trans   &trans    &trans    &trans     &trans     &trans           &trans     &trans           &trans          &trans         &kp BSLH       &kp TILDE
-                                &trans     &mo 3      &trans           &trans     &trans           &trans
+   &kp ESC  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5          &kp N6     &kp N7           &kp N8          &kp N9         &kp N0         &kp DEL
+   &none    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &kp MINUS  &hm RSHFT EQUAL  &hm RCTRL LBKT  &hm RALT RBKT  &hm RGUI PIPE  &kp GRAVE
+   &none    &none     &none     &none      &none      &none           &none      &none            &none           &none          &kp BSLH       &kp TILDE
+                                &none      &mo 3      &none           &none      &none            &none
                         >;
                 };
 
@@ -72,10 +73,10 @@
 // | BTCLR| BT1 | BT2  |  BT3  |  BT4  | BT5 ||   ||     |     |     |     |     |      |
 //                     |       |       |     ||   ||     |     |     |
                         bindings = <
-   &trans      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6  &kp F7         &kp F8         &kp F9        &kp F10   &trans
-   &trans      &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHFT     &trans           &trans  &hm RSHFT F10  &hm RCTRL F11  &hm RALT F12  &kp RGUI  &trans
-   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans  &trans         &trans         &trans        &trans    &trans
-                                           &trans        &trans        &trans           &trans  &trans         &trans
+   &none       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6  &kp F7        &kp F8         &kp F9        &kp F10   &none
+   &none       &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHFT     &none            &none  &hm RSHFT F10  &hm RCTRL F11  &hm RALT F12  &kp RGUI  &none
+   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &none  &none          &none          &none         &none     &none
+                                           &none         &none         &none            &none  &none          &none
                         >;
                 };
         };
