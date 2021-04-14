@@ -25,6 +25,20 @@
         keymap {
                 compatible = "zmk,keymap";
 
+                //default_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  ||   ||  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | CAPS |  A  |  S  |  D  |  F  |  G  ||   ||  H  |  J   |  K  |  L  |  ;  |  '   |
+// |      |  Z  |  X  |  C  |  V  |  B  ||   ||  N  |  M   |  ,  |  .  |  /  |      |
+//                    |     | LWR | ENT ||   || SPC | RSE  |     |
+                        bindings = <
+   //&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
+   //&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G                      &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+   //&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B                      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                            &mo 8     &mo 6  &mt LCTRL RET              &kp SPACE  &mo 2  &kp RALT
+                        //>;
+                //};
+
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  ||   ||  Y  |  U   |  I  |  O  |  P  | BKSP |
@@ -32,12 +46,26 @@
 // |      |  Z  |  X  |  C  |  V  |  B  ||   ||  N  |  M   |  ,  |  .  |  /  |      |
 //                    |     | LWR | ENT ||   || SPC | RSE  |     |
                         bindings = <
-   &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-   &kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G                      &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-   &kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B                      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                            &mo 8     &mo 6  &mt LCTRL RET              &kp SPACE  &mo 2  &kp RALT
+   &kp TAB    &kp Q  &kp W       &kp E           &kp R        &kp T                      &kp Y      &kp U        &kp I           &kp O         &kp P     &kp BSPC
+   &kp LCTRL  &kp A  &hm LALT S  &hm LCTRL D     &hm LSHFT F  &kp G                      &kp H      &hm RSHFT J  &hm RCTRL K     &hm RALT L    &kp SEMI  &kp SQT
+   &kp LSHFT  &kp Z  &kp X       &kp C           &kp V        &kp B                      &kp N      &kp M        &kp COMMA       &kp DOT       &kp FSLH  &kp RSHFT
+                                 &mo 4           &mo 3        &mt LCTRL RET              &kp SPACE  &mo 2        &kp RALT
                         >;
                 };
+
+                //lower_layer {
+// -----------------------------------------------------------------------------------------
+// | ESC |      |      |       |       |     ||   ||     |     |  UP |     | HOME | DEL |
+// |     | LGUI | LALT | LCTRL | LSHFT |     ||   ||     | LFT | DWN | RGT | END  |     |
+// |     |      |      |       |       |     ||   ||     |     |     |     |      |     |
+//                     |  RSE  |       |     ||   ||     | RSE |     |
+                        bindings = <
+  // &kp ESC   &none     &none     &none      &none      &none                &none  &none     &kp UP    &none      &kp HOME  &kp DEL 
+  // &kp CAPS  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &none 
+  // &none     &none     &none     &none      &none      &none                &none  &none     &none     &none      &none     &none 
+                                   &mo 3      &none      &none                &none  &mo 3     &none
+                       // >;
+               // };
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
@@ -46,10 +74,10 @@
 // |     |      |      |       |       |     ||   ||     |     |     |     |      |     |
 //                     |  RSE  |       |     ||   ||     | RSE |     |
                         bindings = <
-   &kp ESC   &none     &none     &none      &none      &none                &none  &none     &kp UP    &none      &kp HOME  &kp DEL 
-   &kp CAPS  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &none 
-   &none     &none     &none     &none      &none      &none                &none  &none     &none     &none      &none     &none 
-                                 &mo 3      &none      &none                &none  &mo 3     &none
+   &kp ESC   &none     &kp PG_UP &kp UP     &kp PG_DN  &kp HOME             &none  &none      &none      &none      &none  &kp DEL 
+   &none     &none     &kp LEFT  &kp DOWN   &kp RIGHT  &kp END              &none  &kp RSHFT  &kp RCTRL  &none      &none  &none 
+   &none     &none     &none     &none      &none      &none                &none  &none      &none      &none      &none  &none 
+                                 &mo 4      &none      &none                &none  &mo 3      &none
                         >;
                 };
                 
@@ -76,10 +104,10 @@
                         bindings = <
    &none       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6  &kp F7        &kp F8         &kp F9        &kp F10   &none
    &none       &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHFT     &none            &none  &hm RSHFT F10  &hm RCTRL F11  &hm RALT F12  &kp RGUI  &none
-   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &none  &none          &none          &none         &none     &tog 5
+   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &none  &none          &none          &none         &none     &none
                                            &none         &none         &none            &none  &none          &none
                         >;
-                };
+                };         
 
                 fourth_layer {
 // -----------------------------------------------------------------------------------------
@@ -88,66 +116,10 @@
 // | BTCLR| BT1 | BT2  |  BT3  |  BT4  | BT5 ||   ||     |     |     |     |     |      |
 //                     |       |       |     ||   ||     |     |     |
                         bindings = <
-   &none       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6  &kp F7        &kp F8         &kp F9        &kp F10   &none
-   &none       &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHFT     &none            &none  &hm RSHFT F10  &hm RCTRL F11  &hm RALT F12  &kp RGUI  &none
-   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &none  &none          &none          &none         &none     &tog 5
-                                           &none         &none         &none            &none  &none          &none
-                        >;
-                };
-
-                fifth_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  ||   ||  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CAPS |  A  |  S  |  D  |  F  |  G  ||   ||  H  |  J   |  K  |  L  |  ;  |  '   |
-// |      |  Z  |  X  |  C  |  V  |  B  ||   ||  N  |  M   |  ,  |  .  |  /  |      |
-//                    |     | LWR | ENT ||   || SPC | RSE  |     |
-                        bindings = <
-   &kp TAB    &kp Q  &kp W       &kp E           &kp R        &kp T                      &kp Y      &kp U        &kp I           &kp O         &kp P     &kp BSPC
-   &kp LCTRL  &kp A  &hm LALT S  &hm LCTRL D     &hm LSHFT F  &kp G                      &kp H      &hm RSHFT J  &hm RCTRL K     &hm RALT L    &kp SEMI  &kp SQT
-   &kp LSHFT  &kp Z  &kp X       &kp C           &kp V        &kp B                      &kp N      &kp M        &kp COMMA       &kp DOT       &kp FSLH  &kp RSHFT
-                                 &mo 8           &mo 6        &mt LCTRL RET              &kp SPACE  &mo 2        &kp RALT
-                        >;
-                };
-
-                sixth_layer {
-// -----------------------------------------------------------------------------------------
-// | ESC |      |      |       |       |     ||   ||     |     |  UP |     | HOME | DEL |
-// |     | LGUI | LALT | LCTRL | LSHFT |     ||   ||     | LFT | DWN | RGT | END  |     |
-// |     |      |      |       |       |     ||   ||     |     |     |     |      |     |
-//                     |  RSE  |       |     ||   ||     | RSE |     |
-                        bindings = <
-   &kp ESC   &none     &kp PG_UP &kp UP     &kp PG_DN  &kp HOME             &none  &none      &none      &none      &none  &kp DEL 
-   &none     &none     &kp LEFT  &kp DOWN   &kp RIGHT  &kp END              &none  &kp RSHFT  &kp RCTRL  &none      &none  &none 
-   &none     &none     &none     &none      &none      &none                &none  &none      &none      &none      &none  &none 
-                                 &mo 8      &none      &none                &none  &mo 3      &none
-                        >;
-                };
-                
-                seventh_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  1   |  2   |   3   |   4   |  5  ||   ||  6  |  7  |  8  |  9  |  0  | DEL |
-// |      | LGUI | LALT | LCTRL | LSHFT |     ||   ||  -  |  =  |  {  |  }  | "|" |  `  |
-// |      |      |      |       |       |     ||   ||     |     |     |     |  \  |  ~  |
-//                      |       |  RSE  |     ||   ||     |     |     |
-                        bindings = <
-   &kp ESC  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5          &kp N6     &kp N7           &kp N8          &kp N9         &kp N0         &kp DEL
-   &none    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &kp MINUS  &hm RSHFT EQUAL  &hm RCTRL LBKT  &hm RALT RBKT  &kp PIPE       &kp GRAVE
-   &none    &none     &none     &none      &none      &none           &none      &none            &none           &none          &kp BSLH       &kp TILDE
-                                &none      &mo 8      &none           &none      &none            &none
-                        >;
-                };
-
-                eigth_layer {
-// -----------------------------------------------------------------------------------------
-// |      | F1  |  F2  |  F3   |  F4   | F5  ||   || F6  | F7  | F8  | F9  | F10 |      |
-// |      |     | LALT | LCTRL | LSHFT |     ||   ||     | F10 | F11 | F12 |     |      |
-// | BTCLR| BT1 | BT2  |  BT3  |  BT4  | BT5 ||   ||     |     |     |     |     |      |
-//                     |       |       |     ||   ||     |     |     |
-                        bindings = <
-   &none  &kp F1        &kp F2     &kp F3     &kp F4          &kp F5           &kp F6  &kp F7        &kp F8         &kp F9        &kp F10   &none
-   &none  &kp LC(LBKT)  &kp LC(S)  &kp LCTRL  &kp LC(F12)     &none            &none  &hm RSHFT F10  &hm RCTRL F11  &hm RALT F12  &kp RGUI  &none
-   &none  &none         &kp LC(LA(P))      &none      &none           &none            &none  &none          &none          &none         &none     &tog 5
-                                   &none      &none           &none            &none  &none          &none
+   &none  &kp F1        &kp F2         &kp F3     &kp F4          &kp F5           &kp F6  &kp F7        &kp F8         &kp F9        &kp F10   &none
+   &none  &kp LC(LBKT)  &kp LC(S)      &kp LCTRL  &kp LC(F12)     &none            &none  &hm RSHFT F10  &hm RCTRL F11  &hm RALT F12  &kp RGUI  &none
+   &none  &none         &kp LC(LA(P))  &none      &none           &none            &none  &none          &none          &none         &none     &none
+                                       &none      &none           &none            &none  &none          &none
                         >;
                 };
                 
