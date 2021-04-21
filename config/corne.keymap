@@ -53,7 +53,7 @@
    &none  &kp Q  &kp W       &kp E           &kp R        &kp T                      &kp Y      &kp U        &kp I           &kp O         &kp P     &kp BSPC
    &none  &kp A  &hm LALT S  &hm LCTRL D     &hm LSHFT F  &kp G                      &kp H      &hm RSHFT J  &hm RCTRL K     &hm RALT L    &kp SEMI  &kp SQT
    &none  &kp Z  &kp X       &kp C           &kp V        &kp B                      &kp N      &kp M        &kp COMMA       &kp DOT       &kp FSLH  &none
-                             &mo HOTKEYS     &mo FUNC     &mt LCTRL RET              &kp SPACE  &mo NUMSYM   &kp RALT
+                             &mo HOTKEYS     &mo NAV      &mt LCTRL RET              &kp SPACE  &mo NUMSYM   &kp RALT
                         >;
                 };
 
